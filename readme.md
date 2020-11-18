@@ -21,7 +21,7 @@ Dumbflix is a streaming service that allows our members to watch a wide variety 
 
 ## How to install?
 
-Clone this repository (clone the latest branch) and DumbFlix API: [https://github.com/shidqi/DW16K4W6N_DUMBLFIX_API/tree/ftb](https://github.com/shidqi/DW16K4W6N_DUMBLFIX_API/tree/ftb)
+Clone this repository
 
 Back-End:
 
