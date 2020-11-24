@@ -45,7 +45,7 @@ class PlayerVideo extends Component {
               ? film.episodes.map((episode, index) => {
                   if (Number(idEp) === episode.id) {
                     return (
-                      <Player key={episode.id} className="player-video" playsInline poster={`http://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
+                      <Player key={episode.id} className="player-video" playsInline poster={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
                         <BigPlayButton position="center" />
                       </Player>
                     );
@@ -53,7 +53,7 @@ class PlayerVideo extends Component {
 
                   if (!idEp && index === 0) {
                     return (
-                      <Player key={episode.id} className="player-video" playsInline poster={`http://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
+                      <Player key={episode.id} className="player-video" playsInline poster={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
                         <BigPlayButton position="center" />
                       </Player>
                     );
@@ -88,7 +88,7 @@ class PlayerVideo extends Component {
             <Col>
               <Row>
                 <Col md="auto" xs="12">
-                  {film.thumbnailFilm === undefined ? false : <Image src={`http://nayuflix.nayumedia.com/images/${film.thumbnailFilm}`} fluid />}
+                  {film.thumbnailFilm === undefined ? false : <Image src={`https://nayuflix.nayumedia.com/images/${film.thumbnailFilm}`} fluid />}
                 </Col>
                 <Col className="description-detail">
                   <h1>{film.title}</h1>
@@ -109,7 +109,7 @@ class PlayerVideo extends Component {
                       return (
                         <Carousel.Item key={episode.id}>
                           <Link to={`/detail/${film.id}/${slugify(film.title, { lower: true })}/${episode.id}`}>
-                            <img className="d-block w-100 episode" src={`http://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} alt="First slide" />
+                            <img className="d-block w-100 episode" src={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} alt="First slide" />
                           </Link>
                           <Carousel.Caption>
                             <h6>{episode.title}</h6>

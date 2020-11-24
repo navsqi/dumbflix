@@ -25,7 +25,7 @@ class Profile extends Component {
                 </Col>
                 <Col md="4">
                   <div className="profile-photo">
-                    <img src="http://nayuflix.nayumedia.com/images/profile1.jpg" alt="" />
+                    <img src="https://nayuflix.nayumedia.com/images/profile1.jpg" alt="" />
                     <Form>
                       <Form.File id="fileProfile">
                         <Form.File.Input isValid />

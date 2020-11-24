@@ -57,7 +57,7 @@ class TableTransaction extends Component {
                       <td>{number++}</td>
                       <td>{transaction.user.fullName}</td>
                       <td>
-                        <a className="text-light" target="_blank" rel="noopener noreferrer" href={`http://nayuflix.nayumedia.com/images/${transaction.attachment}`}>
+                        <a className="text-light" target="_blank" rel="noopener noreferrer" href={`https://nayuflix.nayumedia.com/images/${transaction.attachment}`}>
                           {transaction.attachment}
                         </a>
                       </td>
