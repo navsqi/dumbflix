@@ -50,27 +50,58 @@ class TableTransaction extends Component {
           <tbody>
             {!loading && !error && transactions.length > 0
               ? transactions.map((transaction) => {
-                  let diffDate = dayjs(transaction.dueDate).diff(dayjs(new Date(Date.now())), 'day');
+                  let diffDate = dayjs(transaction.dueDate).diff(
+                    dayjs(new Date(Date.now())),
+                    'day'
+                  );
 
                   return (
                     <tr key={transaction.id}>
                       <td>{number++}</td>
                       <td>{transaction.user.fullName}</td>
                       <td>
-                        <a className="text-light" target="_blank" rel="noopener noreferrer" href={`https://nayuflix.nayumedia.com/images/${transaction.attachment}`}>
+                        <a
+                          className="text-light"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={`https://dumbflixapi.herokuapp.com/images/${transaction.attachment}`}
+                        >
                           {transaction.attachment}
                         </a>
                       </td>
-                      <td>{`${diffDate && diffDate > 0 && transaction.status ? diffDate : 0} Day(s) remaining`}</td>
-                      <td className={transaction.status ? 'text-success' : 'text-warning'}>{transaction.status ? 'Active' : 'Inactive'}</td>
-                      <td className={transaction.status ? 'text-success' : 'text-warning'}>{transaction.status ? 'Approved' : 'Pending'}</td>
+                      <td>{`${
+                        diffDate && diffDate > 0 && transaction.status ? diffDate : 0
+                      } Day(s) remaining`}</td>
+                      <td
+                        className={transaction.status ? 'text-success' : 'text-warning'}
+                      >
+                        {transaction.status ? 'Active' : 'Inactive'}
+                      </td>
+                      <td
+                        className={transaction.status ? 'text-success' : 'text-warning'}
+                      >
+                        {transaction.status ? 'Approved' : 'Pending'}
+                      </td>
                       {role === 'admin' ? (
                         <td>
-                          <DropdownButton className="dropdown-action" size="sm" id="action-button" title="Action">
-                            <Dropdown.Item onClick={this.handleOnClick} data-transaction={transaction.id} data-status={true}>
+                          <DropdownButton
+                            className="dropdown-action"
+                            size="sm"
+                            id="action-button"
+                            title="Action"
+                          >
+                            <Dropdown.Item
+                              onClick={this.handleOnClick}
+                              data-transaction={transaction.id}
+                              data-status={true}
+                            >
                               Approved
                             </Dropdown.Item>
-                            <Dropdown.Item onClick={this.handleOnClick} data-transaction={transaction.id} data-status={false}>
+                            <Dropdown.Item
+                              onClick={this.handleOnClick}
+                              data-transaction={transaction.id}
+                              data-status={false}
+                            >
                               Cancel
                             </Dropdown.Item>
                           </DropdownButton>
@@ -143,7 +174,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getTransactions: () => dispatch(getTransactions()),
-    updateTransaction: (body, idTransaction) => dispatch(updateTransaction(body, idTransaction)),
+    updateTransaction: (body, idTransaction) =>
+      dispatch(updateTransaction(body, idTransaction)),
   };
 };
 

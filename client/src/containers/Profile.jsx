@@ -18,18 +18,28 @@ class Profile extends Component {
                 <Col md="8">
                   <ProfileInfo icon="personal.png" label="Full Name" info={fullName} />
                   <ProfileInfo icon="mail.png" label="Email" info={email} />
-                  <ProfileInfo icon="ticket.png" label="Status" info={subscribe ? 'Active' : 'Inactive'} />
+                  <ProfileInfo
+                    icon="ticket.png"
+                    label="Status"
+                    info={subscribe ? 'Active' : 'Inactive'}
+                  />
                   <ProfileInfo icon="gender.png" label="Gender" info={gender} />
                   <ProfileInfo icon="phone.png" label="Phone Number" info={phone} />
                   <ProfileInfo icon="location.png" label="Location" info={address} />
                 </Col>
                 <Col md="4">
                   <div className="profile-photo">
-                    <img src="https://nayuflix.nayumedia.com/images/profile1.jpg" alt="" />
+                    <img
+                      src="https://dumbflixapi.herokuapp.com/images/profile1.jpg"
+                      alt=""
+                    />
                     <Form>
                       <Form.File id="fileProfile">
                         <Form.File.Input isValid />
-                        <Form.File.Label className="btn btn-red btn-full mt-3" data-browse="Button text">
+                        <Form.File.Label
+                          className="btn btn-red btn-full mt-3"
+                          data-browse="Button text"
+                        >
                           Choose Image
                         </Form.File.Label>
                       </Form.File>

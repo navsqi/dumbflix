@@ -35,7 +35,8 @@ class PlayerVideo extends Component {
     const { isLogin, user, film, loading, error } = this.props;
     let idEp = this.props.match.params.idEp == 1 ? false : this.props.match.params.idEp;
     let episodes = [];
-    if (Object.keys(film).length > 0 && film.episodes != undefined) episodes = film.episodes;
+    if (Object.keys(film).length > 0 && film.episodes != undefined)
+      episodes = film.episodes;
 
     return (
       <div>
@@ -45,7 +46,13 @@ class PlayerVideo extends Component {
               ? film.episodes.map((episode, index) => {
                   if (Number(idEp) === episode.id) {
                     return (
-                      <Player key={episode.id} className="player-video" playsInline poster={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
+                      <Player
+                        key={episode.id}
+                        className="player-video"
+                        playsInline
+                        poster={`https://dumbflixapi.herokuapp.com/images/${episode.thumbnailEp}`}
+                        src={`${episode.linkEp}`}
+                      >
                         <BigPlayButton position="center" />
                       </Player>
                     );
@@ -53,7 +60,13 @@ class PlayerVideo extends Component {
 
                   if (!idEp && index === 0) {
                     return (
-                      <Player key={episode.id} className="player-video" playsInline poster={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} src={`${episode.linkEp}`}>
+                      <Player
+                        key={episode.id}
+                        className="player-video"
+                        playsInline
+                        poster={`https://dumbflixapi.herokuapp.com/images/${episode.thumbnailEp}`}
+                        src={`${episode.linkEp}`}
+                      >
                         <BigPlayButton position="center" />
                       </Player>
                     );
@@ -76,7 +89,10 @@ class PlayerVideo extends Component {
           <Row className="d-flex justify-content-end mb-5 mr-2">
             {/* Button Add Episode */}
             {!loading && !error && isLogin && user.role == 'admin' ? (
-              <a className="btn btn-red" href={`/admin/${this.props.match.params.idFilm}/add-episode`}>
+              <a
+                className="btn btn-red"
+                href={`/admin/${this.props.match.params.idFilm}/add-episode`}
+              >
                 + Add Episode
               </a>
             ) : (
@@ -88,13 +104,24 @@ class PlayerVideo extends Component {
             <Col>
               <Row>
                 <Col md="auto" xs="12">
-                  {film.thumbnailFilm === undefined ? false : <Image src={`https://nayuflix.nayumedia.com/images/${film.thumbnailFilm}`} fluid />}
+                  {film.thumbnailFilm === undefined ? (
+                    false
+                  ) : (
+                    <Image
+                      src={`https://dumbflixapi.herokuapp.com/images/${film.thumbnailFilm}`}
+                      fluid
+                    />
+                  )}
                 </Col>
                 <Col className="description-detail">
                   <h1>{film.title}</h1>
                   <div className="identity">
                     <span>{film.year}</span>
-                    <span className="type">{!loading && film.category != undefined ? film.category.name : false}</span>
+                    <span className="type">
+                      {!loading && film.category != undefined
+                        ? film.category.name
+                        : false}
+                    </span>
                   </div>
                   <p>{film.description}</p>
                 </Col>
@@ -103,13 +130,26 @@ class PlayerVideo extends Component {
 
             {/* Carousel Episode */}
             <Col md="5">
-              <Carousel interval={null} indicators={false} activeIndex={this.state.index} onSelect={this.handleSelect}>
+              <Carousel
+                interval={null}
+                indicators={false}
+                activeIndex={this.state.index}
+                onSelect={this.handleSelect}
+              >
                 {!loading && !error && film.episodes != undefined
                   ? film.episodes.map((episode) => {
                       return (
                         <Carousel.Item key={episode.id}>
-                          <Link to={`/detail/${film.id}/${slugify(film.title, { lower: true })}/${episode.id}`}>
-                            <img className="d-block w-100 episode" src={`https://nayuflix.nayumedia.com/images/${episode.thumbnailEp}`} alt="First slide" />
+                          <Link
+                            to={`/detail/${film.id}/${slugify(film.title, {
+                              lower: true,
+                            })}/${episode.id}`}
+                          >
+                            <img
+                              className="d-block w-100 episode"
+                              src={`https://dumbflixapi.herokuapp.com/images/${episode.thumbnailEp}`}
+                              alt="First slide"
+                            />
                           </Link>
                           <Carousel.Caption>
                             <h6>{episode.title}</h6>
