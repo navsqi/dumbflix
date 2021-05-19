@@ -5,9 +5,13 @@ module.exports = {
     return queryInterface.bulkInsert('categories', [
       {
         name: 'TV Shows',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         name: 'Movies',
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },

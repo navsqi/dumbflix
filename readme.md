@@ -41,4 +41,5 @@ Front-End:
 
 # Demo
 
-username: violet@gmail.com password: test123
+username: violet@gmail.com  
+password: test123

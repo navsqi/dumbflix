@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       linkEp: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       filmId: {
         type: Sequelize.INTEGER,

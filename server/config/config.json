@@ -5,7 +5,7 @@
     "database": "dumbflix_development",
     "host": "localhost",
     "dialect": "mysql",
-    "port": 3313,
+    "port": 3306,
     "operatorsAliases": 0
   },
   "test": {
@@ -14,7 +14,7 @@
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3313,
+    "port": 3306,
     "operatorsAliases": false
   },
   "production": {

@@ -23,11 +23,11 @@ const reducers = combineReducers({
   transactionReducer,
 });
 
-const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
   persistReducer(persistConfig, reducers),
-  storeEnhancers(applyMiddleware(promise))
+  applyMiddleware(promise)
 );
 
 export const persistor = persistStore(store);
