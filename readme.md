@@ -1,3 +1,5 @@
+![Website](home.jpg)
+
 # DumbFlix
 
 ## What is DumbFlix?
@@ -36,3 +38,7 @@ Front-End:
 1. `cd client`
 2. `npm install`
 3. `npm start`
+
+# Demo
+
+username: violet@gmail.com password: test123
